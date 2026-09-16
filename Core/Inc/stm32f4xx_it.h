@@ -55,7 +55,10 @@ void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
+<<<<<<< HEAD
 void SPI1_IRQHandler(void);
+=======
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 void DMA2_Stream0_IRQHandler(void);
 void DMA2_Stream2_IRQHandler(void);
 /* USER CODE BEGIN EFP */

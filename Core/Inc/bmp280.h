@@ -47,10 +47,16 @@ struct bmp280_config{
 };
 
 /* --------------------------------------------------------------- Function Prototypes --------------------------------------------------------------- */
+<<<<<<< HEAD
 uint16_t BMP280_TASK(SPI_HandleTypeDef* spi_handle, int bmp280_config_mode, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE);
 
 uint16_t BMP280_CONFIG(struct bmp280_config bmp280_config_params, SPI_HandleTypeDef* spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE);
 
 uint16_t BMP280_READ(SPI_HandleTypeDef* spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE);
+=======
+uint16_t BMP280_CONFIG(struct bmp280_config bmp280_config_params, SPI_HandleTypeDef spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE);
+
+uint16_t BMP280_READ(SPI_HandleTypeDef spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE);
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 
 #endif /* __BMP280_H */

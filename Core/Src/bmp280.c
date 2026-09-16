@@ -20,6 +20,7 @@ Note: The HAL SPI functions have bus guards in place already, so we don't need t
 #include "stm32f4xx_hal.h"
 #include "bmp280.h"
 
+<<<<<<< HEAD
 /*
 Task for the BMP280, makes the main.c file look a lot cleaner
 */
@@ -46,6 +47,8 @@ uint16_t BMP280_TASK(SPI_HandleTypeDef* spi_handle, int bmp280_config_mode, int*
 }
 
 
+=======
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 
 /*
 This will configure the BMP280 registers over SPI.
@@ -61,7 +64,11 @@ config - 0xF5 params:
 Codes for different function outputs:
 
 */
+<<<<<<< HEAD
 uint16_t BMP280_CONFIG(struct bmp280_config bmp280_config_params, SPI_HandleTypeDef* spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE)
+=======
+uint16_t BMP280_CONFIG(struct bmp280_config bmp280_config_params, SPI_HandleTypeDef spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE)
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 {
     /*
     Set up the bits in the ctrl_meas register
@@ -195,7 +202,11 @@ uint16_t BMP280_CONFIG(struct bmp280_config bmp280_config_params, SPI_HandleType
     HAL_StatusTypeDef spi_status;
     //Attempt to send the command, and check the return on the HAL_SPI_DMA function
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+<<<<<<< HEAD
     spi_status = HAL_SPI_TransmitReceive_DMA(spi_handle, BMP280_TX_Buffer, BMP280_RX_Buffer, BMP280_BUFFER_SIZE);
+=======
+    spi_status = HAL_SPI_TransmitReceive_DMA(&spi_handle, BMP280_TX_Buffer, BMP280_RX_Buffer, BMP280_BUFFER_SIZE);
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 
     switch (spi_status)
     {
@@ -228,12 +239,20 @@ Output Codes:
     0x0005 -> standby time not elapsed yet
     0x0006 -> HAl function returned nothing at all
 */
+<<<<<<< HEAD
 uint16_t BMP280_READ(SPI_HandleTypeDef* spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE)
+=======
+uint16_t BMP280_READ(SPI_HandleTypeDef spi_handle, int* spi_done_flag, uint8_t* BMP280_TX_Buffer, uint8_t* BMP280_RX_Buffer, int BMP280_BUFFER_SIZE)
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 {
     HAL_StatusTypeDef spi_status;
     //Attempt to send the command, and check the return on the HAL_SPI_DMA function
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+<<<<<<< HEAD
     spi_status = HAL_SPI_TransmitReceive_DMA(spi_handle, BMP280_TX_Buffer, BMP280_RX_Buffer, BMP280_BUFFER_SIZE);
+=======
+    spi_status = HAL_SPI_TransmitReceive_DMA(&spi_handle, BMP280_TX_Buffer, BMP280_RX_Buffer, BMP280_BUFFER_SIZE);
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 
     switch (spi_status)
     {
@@ -251,7 +270,14 @@ uint16_t BMP280_READ(SPI_HandleTypeDef* spi_handle, int* spi_done_flag, uint8_t*
         /* HAL function returned a timeout error */
         return 0x0004;
     default:
+<<<<<<< HEAD
         *spi_done_flag = 0;
         return 0x0006; //This is the impossible case that should not happen at all, but for pedantics sake we can put it here
     }
 }
+=======
+        return 0x0006; //This is the impossible case that should not happen at all, but for pedantics sake we can put it here
+    }
+}
+
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37

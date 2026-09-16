@@ -1,0 +1,2 @@
+../Core/Src/bmp280.c:38:10:BMP280_CONFIG	28
+../Core/Src/bmp280.c:205:10:BMP280_READ	5

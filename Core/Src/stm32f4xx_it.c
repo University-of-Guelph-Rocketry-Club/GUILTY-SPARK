@@ -57,7 +57,10 @@
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_spi1_rx;
 extern DMA_HandleTypeDef hdma_spi1_tx;
+<<<<<<< HEAD
 extern SPI_HandleTypeDef hspi1;
+=======
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -201,6 +204,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+<<<<<<< HEAD
   * @brief This function handles SPI1 global interrupt.
   */
 void SPI1_IRQHandler(void)
@@ -215,6 +219,8 @@ void SPI1_IRQHandler(void)
 }
 
 /**
+=======
+>>>>>>> 7998f9b4c84e7323bd4b845a87337b3c18198c37
   * @brief This function handles DMA2 stream0 global interrupt.
   */
 void DMA2_Stream0_IRQHandler(void)
